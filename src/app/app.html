@@ -1,12 +1,33 @@
 
 
-<main>
-  <app-fecha-hora-component />
-  <app-numero-aleatorio-component />
-  <app-historial-component />
-  <app-localstorage-component />
-  <app-cookies-component />
-  <app-ventana-component />
+<main class="page-shell">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">UT3 · HERRAMIENTAS WEB</p>
+      <h1>Entrega Evaluable UT3</h1>
+    </div>
+  </header>
+
+  <section class="tools-grid" aria-label="Herramientas disponibles">
+    <article class="tool-card" aria-label="Fecha y hora">
+      <app-fecha-hora-component />
+    </article>
+    <article class="tool-card" aria-label="Generador de números aleatorios">
+      <app-numero-aleatorio-component />
+    </article>
+    <article class="tool-card" aria-label="Historial">
+      <app-historial-component />
+    </article>
+    <article class="tool-card" aria-label="Almacenamiento local">
+      <app-localstorage-component />
+    </article>
+    <article class="tool-card" aria-label="Cookies">
+      <app-cookies-component />
+    </article>
+    <article class="tool-card" aria-label="Ventana">
+      <app-ventana-component />
+    </article>
+  </section>
 </main>
 
 <router-outlet/>

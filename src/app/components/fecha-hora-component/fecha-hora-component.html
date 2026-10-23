@@ -1,1 +1,44 @@
-<p>fecha-hora-component works!</p>
+<section>
+  <h2>Fecha y hora actual</h2>
+
+  <label>
+    <input
+      type="checkbox"
+      [checked]="formatoHoras"
+      (change)="cambiarFormato($event)"
+    >
+    Usar formato de 24 horas
+  </label>
+
+  <p>{{ formatearFecha(fecha()) }}</p>
+
+  <hr>
+
+  <label>
+    <input
+      type="checkbox"
+      [checked]="mostrarReloj"
+      (change)="cambiarVisibilidadReloj($event)"
+    >
+    Mostrar reloj de otra ciudad
+  </label>
+
+  @if (mostrarReloj) {
+    <div>
+      <label for="zona-horaria">Ciudad:</label>
+      <select
+        id="zona-horaria"
+        [value]="zonaHoraria"
+        (change)="cambiarZonaHoraria($event)"
+      >
+        <option value="Europe/Madrid">Madrid</option>
+        <option value="America/Mexico_City">Ciudad de México</option>
+        <option value="Asia/Tokyo">Tokio</option>
+      </select>
+
+      <p>
+        {{ formatearFecha(fecha(), zonaHoraria) }}
+      </p>
+    </div>
+  }
+</section>

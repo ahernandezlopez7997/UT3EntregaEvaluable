@@ -1,1 +1,59 @@
-<p>numero-aleatorio-component works!</p>
+<section class="generador">
+  <h2>Generador de números aleatorios</h2>
+
+  <div class="controles">
+    <label for="cantidad-numeros">Cantidad de números:</label>
+    <input
+      id="cantidad-numeros"
+      type="number"
+      min="1"
+      step="1"
+      [value]="cantidad"
+      (input)="elegirCantidad($event)"
+    >
+
+    <label for="minimo">Mínimo:</label>
+    <input
+      id="minimo"
+      type="number"
+      step="1"
+      [value]="minimo"
+      (input)="elegirMinimo($event)"
+    >
+
+    <label for="maximo">Máximo:</label>
+    <input
+      id="maximo"
+      type="number"
+      step="1"
+      [value]="maximo"
+      (input)="elegirMaximo($event)"
+    >
+  </div>
+
+  <label class="opcion-repetidos">
+    <input
+      type="checkbox"
+      [checked]="numerosRepetidos"
+      (change)="permitirRepetidos($event)"
+    >
+    Permitir números repetidos
+  </label>
+
+  <button type="button" (click)="generarNumeros()">Generar números</button>
+
+  @if (error) {
+    <p class="error" role="alert">{{ error }}</p>
+  }
+
+  @if (numerosGenerados.length > 0) {
+    <div aria-live="polite">
+      <h3>Números generados</h3>
+      <ul>
+        @for (numero of numerosGenerados; track $index) {
+          <li>{{ numero }}</li>
+        }
+      </ul>
+    </div>
+  }
+</section>

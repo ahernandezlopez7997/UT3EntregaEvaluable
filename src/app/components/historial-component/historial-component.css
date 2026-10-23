@@ -1,0 +1,39 @@
+.historial {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.vista-previa {
+  width: 250px;
+  height: 150px;
+  border: 2px solid #333;
+}
+
+.paleta,
+.controles-historial,
+.control-retroceso {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton-color {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+.boton-color.seleccionado {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.control-retroceso input {
+  width: 4rem;
+}
+
+.mensaje {
+  color: #c92a2a;
+}

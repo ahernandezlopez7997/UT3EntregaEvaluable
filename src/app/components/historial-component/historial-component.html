@@ -1,1 +1,55 @@
-<p>historial-component works!</p>
+<section class="historial">
+  <h2>Historial de colores</h2>
+
+  <div
+    class="vista-previa"
+    role="img"
+    [attr.aria-label]="'Color actual: ' + historialColores[indice]"
+    [style.background-color]="historialColores[indice]"
+  ></div>
+
+  <div class="paleta" aria-label="Colores disponibles">
+    @for (color of colores; track color) {
+      <button
+        type="button"
+        class="boton-color"
+        [style.background-color]="color"
+        [class.seleccionado]="color === historialColores[indice]"
+        [attr.aria-label]="'Elegir color ' + color"
+        [attr.aria-pressed]="color === historialColores[indice]"
+        (click)="seleccionarColor(color)"
+      ></button>
+    }
+  </div>
+
+  <p class="resumen">
+    Cambios registrados: <strong>{{ historialColores.length - 1 }}</strong>
+    <span aria-hidden="true">·</span>
+    Posición actual: <strong>{{ indice }}</strong> de {{ historialColores.length - 1 }}
+  </p>
+
+  <div class="controles-historial">
+    <button type="button" (click)="atras()" [disabled]="indice === 0">
+      Atrás
+    </button>
+    <button
+      type="button"
+      (click)="adelante()"
+      [disabled]="indice === historialColores.length - 1"
+    >
+      Adelante
+    </button>
+  </div>
+
+  <div class="control-retroceso">
+    <label for="pasos-retroceso">Retroceder cambios:</label>
+    <input #pasos id="pasos-retroceso" type="number" min="1" value="1">
+    <button type="button" (click)="retroceder(pasos.value)">
+      Retroceder
+    </button>
+  </div>
+
+  @if (mensaje) {
+    <p class="mensaje" role="alert">{{ mensaje }}</p>
+  }
+</section>
