@@ -3,40 +3,21 @@
 
   <div class="controles">
     <label for="cantidad-numeros">Cantidad de números:</label>
-    <input
-      id="cantidad-numeros"
-      type="number"
-      min="1"
-      step="1"
-      [value]="cantidad"
-      (input)="elegirCantidad($event)"
-    >
+    <input id="cantidad-numeros" type="number" min="1" step="1"
+           [value]="cantidad" (input)="elegirCantidad($event)">
 
     <label for="minimo">Mínimo:</label>
-    <input
-      id="minimo"
-      type="number"
-      step="1"
-      [value]="minimo"
-      (input)="elegirMinimo($event)"
-    >
+    <input id="minimo" type="number" step="1"
+           [value]="minimo" (input)="elegirMinimo($event)">
 
     <label for="maximo">Máximo:</label>
-    <input
-      id="maximo"
-      type="number"
-      step="1"
-      [value]="maximo"
-      (input)="elegirMaximo($event)"
-    >
+    <input id="maximo" type="number" step="1"
+           [value]="maximo" (input)="elegirMaximo($event)">
   </div>
 
   <label class="opcion-repetidos">
-    <input
-      type="checkbox"
-      [checked]="numerosRepetidos"
-      (change)="permitirRepetidos($event)"
-    >
+    <input type="checkbox"
+           [checked]="numerosRepetidos" (change)="permitirRepetidos($event)">
     Permitir números repetidos
   </label>
 

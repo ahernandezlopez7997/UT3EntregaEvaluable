@@ -2,11 +2,8 @@
   <h2>Fecha y hora actual</h2>
 
   <label>
-    <input
-      type="checkbox"
-      [checked]="formatoHoras"
-      (change)="cambiarFormato($event)"
-    >
+    <input type="checkbox"
+           [checked]="formatoHoras" (change)="cambiarFormato($event)">
     Usar formato de 24 horas
   </label>
 
@@ -15,25 +12,33 @@
   <hr>
 
   <label>
-    <input
-      type="checkbox"
-      [checked]="mostrarReloj"
-      (change)="cambiarVisibilidadReloj($event)"
-    >
+    <input type="checkbox"
+           [checked]="mostrarReloj" (change)="cambiarVisibilidadReloj($event)">
     Mostrar reloj de otra ciudad
   </label>
 
+<!--  El div que muestra la información del reloj de otra ciudad -->
   @if (mostrarReloj) {
     <div>
       <label for="zona-horaria">Ciudad:</label>
-      <select
-        id="zona-horaria"
-        [value]="zonaHoraria"
-        (change)="cambiarZonaHoraria($event)"
-      >
+      <select id="zona-horaria"
+              [value]="zonaHoraria" (change)="cambiarZonaHoraria($event)">
+
         <option value="Europe/Madrid">Madrid</option>
+        <option value="Europe/Paris">París</option>
+        <option value="Europe/London">Londres</option>
+        <option value="Europe/Berlin">Berlín</option>
+        <option value="America/New_York">Nueva York</option>
+        <option value="America/Los_Angeles">Los Ángeles</option>
+        <option value="America/Sao_Paulo">São Paulo</option>
+        <option value="America/Argentina/Buenos_Aires">Buenos Aires</option>
         <option value="America/Mexico_City">Ciudad de México</option>
+        <option value="Asia/Singapore">Singapur</option>
         <option value="Asia/Tokyo">Tokio</option>
+        <option value="Africa/Cairo">El Cairo</option>
+        <option value="Africa/Johannesburg">Johannesburgo</option>
+        <option value="Australia/Sydney">Sídney</option>
+
       </select>
 
       <p>

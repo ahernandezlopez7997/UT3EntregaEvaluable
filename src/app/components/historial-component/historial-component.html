@@ -1,24 +1,21 @@
 <section class="historial">
   <h2>Historial de colores</h2>
 
-  <div
-    class="vista-previa"
-    role="img"
-    [attr.aria-label]="'Color actual: ' + historialColores[indice]"
-    [style.background-color]="historialColores[indice]"
-  ></div>
+<!--  Este div muestra un cuadro con el color actual -->
+  <div class="vista-previa" role="img"
+       [attr.aria-label]="'Color actual: ' + historialColores[indice]"
+       [style.background-color]="historialColores[indice]">
+  </div>
 
   <div class="paleta" aria-label="Colores disponibles">
     @for (color of colores; track color) {
-      <button
-        type="button"
-        class="boton-color"
+      <button type="button" class="boton-color"
         [style.background-color]="color"
         [class.seleccionado]="color === historialColores[indice]"
         [attr.aria-label]="'Elegir color ' + color"
         [attr.aria-pressed]="color === historialColores[indice]"
-        (click)="seleccionarColor(color)"
-      ></button>
+        (click)="seleccionarColor(color)">
+      </button>
     }
   </div>
 
@@ -35,8 +32,7 @@
     <button
       type="button"
       (click)="adelante()"
-      [disabled]="indice === historialColores.length - 1"
-    >
+      [disabled]="indice === historialColores.length - 1">
       Adelante
     </button>
   </div>
