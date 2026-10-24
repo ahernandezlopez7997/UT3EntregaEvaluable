@@ -1,0 +1,14 @@
+.cookies {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.cookies h2,
+.cookies p {
+  margin: 0;
+}
+
+.cookies input {
+  max-width: 100%;
+}

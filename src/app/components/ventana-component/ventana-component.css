@@ -1,0 +1,62 @@
+.ventana {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.ventana h2 {
+  margin: 0;
+}
+
+.controles-ventana {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(56px, 76px));
+  grid-template-rows: repeat(3, 52px);
+  gap: 8px;
+  justify-self: center;
+  align-items: stretch;
+  width: max-content;
+}
+
+.controles-ventana button {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.flecha {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.arriba {
+  grid-area: 1 / 2;
+}
+
+.izquierda {
+  grid-area: 2 / 1;
+}
+
+.boton-cerrar {
+  grid-area: 2 / 2;
+  background: #b94b4b;
+}
+
+.boton-abrir {
+  grid-area: 2 / 2;
+}
+
+.boton-cerrar:hover {
+  background: #963a3a;
+}
+
+.derecha {
+  grid-area: 2 / 3;
+}
+
+.abajo {
+  grid-area: 3 / 2;
+}

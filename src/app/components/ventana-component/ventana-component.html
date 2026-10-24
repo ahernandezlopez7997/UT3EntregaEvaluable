@@ -1,1 +1,21 @@
-<p>ventana-component works!</p>
+<section class="ventana">
+  <h2>Control de ventana</h2>
+
+  <div class="controles-ventana" role="group" aria-label="Controles de la ventana">
+    @if (ventana) {
+      <button type="button" class="flecha arriba" aria-label="Mover arriba" title="Arriba"
+              (click)="moverVentana(0, -100)">↑</button>
+      <button type="button" class="flecha izquierda" aria-label="Mover a la izquierda" title="Izquierda"
+              (click)="moverVentana(-100, 0)">←</button>
+      <button type="button" class="flecha derecha" aria-label="Mover a la derecha" title="Derecha"
+              (click)="moverVentana(100, 0)">→</button>
+      <button type="button" class="flecha abajo" aria-label="Mover abajo" title="Abajo"
+              (click)="moverVentana(0, 100)">↓</button>
+      <button type="button" class="boton-cerrar" aria-label="Cerrar ventana" title="Cerrar ventana"
+              (click)="cerrarVentana()">Cerrar</button>
+    } @else {
+      <button type="button" class="boton-abrir" aria-label="Abrir ventana"
+              (click)="abrirVentana()">Abrir</button>
+    }
+  </div>
+</section>

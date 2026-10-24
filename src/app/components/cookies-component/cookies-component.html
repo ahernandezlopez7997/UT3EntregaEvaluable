@@ -1,1 +1,18 @@
-<p>cookies-component works!</p>
+<section class="cookies">
+  @if (!nombre) {
+    <h2>¡Bienvenido! ¿Cómo te llamas?</h2>
+    <input #nombreInput placeholder="Tu nombre">
+    <button (click)="guardarNombre(nombreInput.value)">Guardar</button>
+  } @else {
+    <h2>Hola, {{ nombre }}</h2>
+    <p>Esta es tu visita número {{ visitas }}.</p>
+
+    @if (ultimaVisita) {
+      <p>Tu visita anterior fue el {{ ultimaVisita }}.</p>
+    } @else {
+      <p>Es tu primera visita.</p>
+    }
+  }
+
+  <button (click)="borrarDatos()">Borrar todos los datos</button>
+</section>

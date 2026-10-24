@@ -1,0 +1,14 @@
+.localStorage {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.localStorage h2,
+.localStorage p {
+  margin: 0;
+}
+
+.localStorage input {
+  max-width: 100%;
+}
